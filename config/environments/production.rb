@@ -24,6 +24,22 @@ Rails.application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
 
+
+# onfig.action_mailer.default_url_options = { host: "wreck-house-press-back.herokuapp.com", protocol: "https" }
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  :address => "smtp.gmail.com",
+  :port => 587,
+  :domain => "fathomless-lake-40918.herokuapp.com",
+  :user_name => ENV["EMAIL"],
+  :password => ENV["EMAIL_PWORD"],
+  :authentication => "login",
+
+}
+
+
+
+
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX

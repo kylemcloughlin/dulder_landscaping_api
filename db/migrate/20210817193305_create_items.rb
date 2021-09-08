@@ -8,7 +8,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.string :unit
       t.integer :quantity
       t.references :cat, null: false, foreign_key: true
-      t.references :sub_cat, null: false, foreign_key: true
+      t.references :sub_cat, null: true
 
       t.timestamps
     end

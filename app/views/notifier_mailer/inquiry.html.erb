@@ -1,0 +1,24 @@
+<h1>New Materials Request</h1>
+
+<h1>Materials List</h1>
+<p> <%= @cart%></p>
+   <% @cart.each do |item| %>
+   <tr>
+      <th> Product Name: <%= item[:name] %></th>   
+      <th>Product Price:<%= item[:price] %></th>
+      <th>amount requested:<%= item[:value] %> units</th>
+      <th>total before tax:<%= item[:total] %></th>
+    <br/>
+   </tr>
+   <% end %>
+
+<h1>shipping info</h1>
+<p> name: <%= @shipping[:first]%>  <%= @shipping[:last]%></p>
+<p> company:<%= @shipping[:company]%></p>
+<p> Street: <%= @shipping[:street]%></p>
+<p> unit: <%= @shipping[:unit]%></p>
+<p> postal code:  <%= @shipping[:postal] %></p>
+<p> City:  <%= @shipping[:postal]%></p>
+<p> Prov:  <%= @shipping[:province]%></p>
+<p> return Email:  <%= @shipping[:email] %></p>
+

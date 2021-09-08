@@ -23,16 +23,55 @@ class CustomerController < ApplicationController
   currency: "cad",
   description: "discription of sold items: #{sold}", 
   payment_method_types: ["card"],
+
 })
 
 confirm = Stripe::PaymentIntent.confirm(
   payment_intent.id,
-  { payment_method: "pm_card_visa" },
+  { payment_method: "pm_card_visa",
+  receipt_email: 'kylemcloughlindev@gmail.com' },
 )
       if confirm.status === 'succeeded'
-     
+            ReceiptMailer.with(email: 'kylemcloughlindev@gmail.com', data: confirm).sale_email.deliver_now
         render json: { payment_status: confirm.status, confirm: confirm }
       end
     end
 
+
+def inquiry 
+  puts "hit inquiry"
+  cart = params[:cart]
+  shipping = params[:shipping]
+  output = []
+  cart.each do |item|
+    new_item = {}
+    # byebug
+
+    new_item[:name] = item[:name]
+    new_item[:value] = item[:value]
+    new_item[:price] = item[:price]
+    new_item[:total] = item[:value].to_i * item[:price].to_i
+    test = new_item[:total]
+    test = test.to_s
+    test = test.split('')
+    lst = test.slice!(2,2)
+    new_total = [test, '.' , lst]
+    new_total = new_total.join("")
+    new_item[:total] = new_total
+    output << new_item
+  end
+  
+  # byebug
+  NotifierMailer.with({ shipping: shipping, cart: output  }).inquiry.deliver_now
+  render :ok 
+
+end
+def quote 
+  puts 'hit quute';
+  email = params[:email]
+  body = params[:body]
+  # byebug
+  NotifierMailer.with({ email: email, body: body }).quote.deliver_now
+  render :ok 
+end
 end

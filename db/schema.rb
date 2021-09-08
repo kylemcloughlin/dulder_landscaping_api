@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2021_08_17_193305) do
     t.string "unit"
     t.integer "quantity"
     t.bigint "cat_id", null: false
-    t.bigint "sub_cat_id", null: false
+    t.bigint "sub_cat_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cat_id"], name: "index_items_on_cat_id"
@@ -47,6 +47,5 @@ ActiveRecord::Schema.define(version: 2021_08_17_193305) do
   end
 
   add_foreign_key "items", "cats"
-  add_foreign_key "items", "sub_cats"
   add_foreign_key "sub_cats", "cats"
 end
