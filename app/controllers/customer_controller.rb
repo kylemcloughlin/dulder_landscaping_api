@@ -69,9 +69,10 @@ end
 def quote 
   puts 'hit quute';
   email = params[:email]
+  number = params[:number]
   body = params[:body]
   # byebug
-  NotifierMailer.with({ email: email, body: body }).quote.deliver_now
+  NotifierMailer.with({ email: email, number: number, body: body }).quote.deliver_now
   render :ok 
 end
 end

@@ -18,6 +18,7 @@ class NotifierMailer < ApplicationMailer
   #
   def quote
     @email = params[:email]
+    @number = params[:number]
     @body = params[:body]
     mail to: "kylemcloughlindev @gmail.com", subject: 'Request for Quote'
   end
