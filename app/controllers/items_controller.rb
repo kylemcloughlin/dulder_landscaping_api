@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
 
   # GET /items
   def index
-    byebug
+    # byebug
     @items = Item.all
 
     render json: @items
