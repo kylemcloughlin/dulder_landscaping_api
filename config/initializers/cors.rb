@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins ['http://localhost:3000', 'https://shrouded-crag-98843.herokuapp.com', 'http://shrouded-crag-98843.herokuapp.com', 'https://master.dml2euvkz2dhi.amplifyapp.com', 'http://master.dml2euvkz2dhi.amplifyapp.com']
+    origins ['http://localhost:3000','https://master.dml2euvkz2dhi.amplifyapp.com', 'http://master.dml2euvkz2dhi.amplifyapp.com', 'https://lakerockdesign.ca/']
     resource '*',
       methods: [:get, :post, :put, :patch, :delete, :options, :head]
   end
