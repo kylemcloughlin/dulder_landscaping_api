@@ -1,24 +1,41 @@
-# README
+# Lake Rock Design - backend
+the backend for a E-Commerce and Professional website for a Landscaping and Landscaping supply Company based in Central Ontario.
+## Live
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  [www.lakerockdesign.ca/](https://www.lakerockdesign.ca/)
+## Screenshots
+#### Screenshot of Homepage
+!["Screenshot of Homepage"](docs/homepage.png)
+#### Screenshot of Requesting a Quote
+!["Screenshot of Requesting a Quote"](docs/request.png)
+#### Screenshot of Store Page
+!["Screenshot of Item Page"](docs/landscapingstore.png)
+#### Screenshot of Item Page
+!["Screenshot of Item Page"](docs/checkout.png)
+#### Screenshot of Checkout
+!["Screenshot of Checkout page"](docs/checkout.png)
 
-Things you may want to cover:
+## Tech Stack
+* Front-End: HTML, CSS, React, Bootstrap.
 
-* Ruby version
+* Back-end: Ruby on Rails API, Postgres.
 
-* System dependencies
+<!-- * Testing: Jest, Storybook, and Cypress. -->
 
-* Configuration
+## Setup
 
-* Database creation
+* Install dependencies with `Bundle Install`.
+* run `rails db:setup` or `rails db:create`, `rails db:migrate`, `rails db:seed`
+* Fork & Install dependencies for frontend [here](https://github.com/kylemcloughlin/dulder)
+* Run `rails s -p 3001` - Backend
+* Run `npm start` - Frontend
 
-* Database initialization
+## Dependencies
+  *  ruby -  ^2.7.2
+  *  rails - ~> 6.0.3 >= 6.0.3.5
+  *  pg - >= 0.18 < 2.0
+  *  rack-cors
+  *  stripe
+  *  byebug
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
