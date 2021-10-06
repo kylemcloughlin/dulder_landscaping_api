@@ -1,5 +1,5 @@
 # Lake Rock Design - backend
-the backend for a E-Commerce and Professional website for a Landscaping and Landscaping supply Company based in Central Ontario.
+the backend for an E-Commerce and Professional website for a Landscaping and Landscaping supply Company based in Central Ontario.
 ## Live
 
   [www.lakerockdesign.ca/](https://www.lakerockdesign.ca/)
@@ -36,6 +36,6 @@ the backend for a E-Commerce and Professional website for a Landscaping and Land
   *  pg - >= 0.18 < 2.0
   *  rack-cors
   *  stripe
-  *  byebug
+  *  byebugn
 
 
